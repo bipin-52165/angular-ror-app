@@ -1,0 +1,76 @@
+<div data-extend-template="/layouts/layout.html">
+  <div data-block="content">
+    <section class="signUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="text-center" ng-show="user">
+              <h2>Welcome {{user.first_name}}</h2>
+              <p class="R20R">
+                  To log in with a different account, please <a href="#" ng-click="logout()">log out</a> first.
+              </p>
+            </div>
+            <div ng-hide="user">
+              <form novalidate role="form" name="signupForm" ng-submit="signup()" class="form-horizontal">
+                <fieldset>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label"></label>
+                    <div class="col-lg-10">
+                      <h2>Sign Up</h2>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">First Name</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" ng-model="signupModel.firstName" id="loginFirstName" placeholder="First name" required="">
+                      <div class="error">{{signUpError.first_name[0]}}</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Last Name</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" ng-model="signupModel.lastName" id="loginLastName" placeholder="Last name" required="">
+                      <div class="error">{{signUpError.last_name[0]}}</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email ID</label>
+                    <div class="col-lg-10">
+                      <input name="email" class="form-control" ng-model="signupModel.email" type="email" id="loginEmail" placeholder="Email Address" required="">
+                      <div class="error">{{signUpError.email[1]}}</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-10">
+                      <input name="password" class="form-control" ng-model="signupModel.password" type="password" id="loginPassword" placeholder="Password" required="">
+                      <div class="error">{{signUpError.password[0]}}</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Confirm Password</label>
+                    <div class="col-lg-10">
+                      <input name="password" class="form-control" ng-model="signupModel.confirmPassword" type="password" id="loginConfirmPassword" placeholder="Confirm Password" required="">
+                      <div class="error">{{signUpError.password_confirmation[0]}}</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <input type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid" value="Sign Up">
+                      <a class="btn btn-link" href="#/login">Already a member? Log in</a>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

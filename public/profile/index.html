@@ -1,0 +1,64 @@
+<div data-extend-template="/layouts/layout.html">
+  <div data-block="content">
+    <div class="container" ng-show="flash_message">
+      <div class="col-md-7 col-md-offset-2 successMsg mb10">
+        <span class="iconPro i_check_w"></span>{{flash_message}} <a class="iconPro i_close_b fr" hide-flash-message></a>
+      </div>
+    </div>
+
+    <section ng-hide="user" class="applicationAdvisors">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-md-offset-2">
+            <div class="text-center">
+              <h3>Please <a class="tcOrg" href="#/login">log in</a> to access your profile</h3>
+              <p class="R20R">Don't have an account? <a class="tcOrg" href="#/signup">sign up now</a> for free.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div ng-show="user" class="container">
+      <form novalidate role="form" name="memberNameForm" ng-submit="updateUser()" class="form-horizontal">
+        <fieldset>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label"></label>
+            <div class="col-lg-6">
+              <h2>Profile</h2>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">First Name</label>
+            <div class="col-lg-6">
+              <input type="text" class="form-control" name="firstName" ng-model="user.first_name" id="memberfirstName" placeholder="Enter first name" required="">
+              <div class="error">{{userFormError.first_name[0]}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Last Name</label>
+            <div class="col-lg-6">
+              <input type="text" class="form-control" name="lastName" ng-model="user.last_name" id="memberLastName" placeholder="Enter last name" required="">
+              <div class="error">{{userFormError.last_name[0]}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email ID</label>
+            <div class="col-lg-6">
+              <input type="text" class="form-control" name="email" ng-model="user.email" id="memberEmail" placeholder="Enter last name" required="">
+              <div class="error">{{userFormError.email[1]}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-6 col-lg-offset-2">
+              <button type="button" class="btn btn-primary" type="submit" ng-disabled="memberNameForm.$invalid" ng-click="updateUser()">Update</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

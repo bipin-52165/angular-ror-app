@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="AngularApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angularjs Application</title>
+  <meta name="description" content="Angularjs Application">
+
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800|Open+Sans+Condensed:300,700|Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrap" ng-view></div>
+<%= javascript_include_tag "application" %>
+</body>
+</html>

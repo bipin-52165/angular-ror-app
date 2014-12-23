@@ -1,0 +1,32 @@
+<div data-extend-template="/layouts/layout.html">
+  <div data-block="content">
+    <div class="container" ng-show="flash_message">
+      <div class="col-md-7 col-md-offset-2 successMsg mb10">
+        <span class="iconPro i_check_w"></span>{{flash_message}} <a class="iconPro i_close_b fr" hide-flash-message></a>
+      </div>
+    </div>
+    <section class="login">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3" style="display:none;">
+            <form novalidate role="form" name="loginForm" ng-submit="login()">
+              <div class="formBox mt20">
+                <h2>Verify your email</h2>
+                <div class="clAll mb20"></div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <label for="token">Enter your confirmation code</label>
+                    <input type="text" name="token" ng-model="token" type="token" id="token" placeholder="Confirmation Code" required="" auto-focus>
+                  </div>
+                </div>
+                <div class="bottomBtn">
+                  <button type="button" class="btn grd-org btnOrgLg fr" type="submit" ng-disabled="loginForm.$invalid" ng-click="verify()">Verify</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
