@@ -55,3 +55,4 @@ end
 gem 'devise'
 gem 'bootstrap-sass-rails'
 gem 'angularjs-rails'
+gem "bootstrap-sass", ">= 3.4.1"
